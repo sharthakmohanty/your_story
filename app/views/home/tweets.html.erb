@@ -1,0 +1,29 @@
+<table boder="2px">
+<tr>
+<th>Twit User Id </th>
+<th>Twit Description</th>
+<th>Twit Url</th>
+<th>Twit user screen name </th>
+<th>Twit User Name </th>
+</tr>
+<%current_user.tweets.each do |t|%>
+<tr>
+<td><%=t.twit_user_id%></td> 
+<td><%=raw(t.description)%></td> 
+<td><%=link_to"#{t.twit_url}",t.twit_url%></td> 
+<td><%=t.twit_user_screen_name%></td> 
+<td><%=t.twit_user_name%></td> 
+
+
+</tr>
+<%end%>
+</table>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+</style>
